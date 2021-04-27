@@ -44,7 +44,7 @@ app.post('/login', function (request, response){
     const mockpassword = "superSecret";
 
     //check login condition
-    if(username == mockusername && password == mockpassword){
+    if(username === mockusername && password === mockpassword){
         response.json({
             success: true,
             message: "password and email match!",
@@ -58,7 +58,15 @@ app.post('/login', function (request, response){
     }
 })
 
+app.get('/sum/:num1', function (request, response){
+    console.log(request.params.num1);
+    response.json({
+        success: true,
+        message: request.params.num1
+    })
+})
+
 //The server is listening on the port 8000
 app.listen(8000, function (){
-    console.log("App is running on port 8080");
+    console.log("App is running on port 8000");
 })
