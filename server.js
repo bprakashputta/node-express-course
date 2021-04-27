@@ -12,7 +12,13 @@ const mockUserData = [
     }
 ]
 
-
+app.get('/users', function (request, response){
+    response.json({
+        success: true,
+        message: 'successfully got users. Nice!!',
+        users: mockUserData
+    })
+})
 
 app.listen(8080, function (){
     console.log("App is running on port 8080");
