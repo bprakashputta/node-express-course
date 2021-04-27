@@ -13,10 +13,20 @@ const mockUserData = [
 ]
 
 app.get('/users', function (request, response){
+    console.log(request.params.id)
     response.json({
         success: true,
         message: 'successfully got users. Nice!!',
         users: mockUserData
+    })
+})
+
+app.get('/users/:id', function (request, response){
+    console.log(request.params.id)
+    response.json({
+        success: true,
+        message: 'successfully got users. Nice!!',
+        user: request.params.id
     })
 })
 
